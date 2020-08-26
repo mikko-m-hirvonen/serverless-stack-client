@@ -5,6 +5,8 @@ import NotFound from './containers/NotFound'
 import Login from './containers/Login'
 import NewFeedback from "./containers/NewFeedback";
 import Feedbacks from "./containers/Feedbacks"
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 export default function Routes() {
     return (
@@ -12,15 +14,15 @@ export default function Routes() {
             <Route exact path="/">
                 <Home />
             </Route>
-            <Route exact path="/login">
+            <UnauthenticatedRoute exact path="/login">
                 <Login />
-            </Route>
-            <Route exact path="/feedbacks/new">
+            </UnauthenticatedRoute>
+            <AuthenticatedRoute exact path="/feedbacks/new">
                 <NewFeedback />
-            </Route>
-            <Route exact path="/feedbacks/:id">
+            </AuthenticatedRoute>
+            <AuthenticatedRoute exact path="/feedbacks/:id">
                 <Feedbacks />
-            </Route>
+            </AuthenticatedRoute>
             <Route>
                 <NotFound />
             </Route>
