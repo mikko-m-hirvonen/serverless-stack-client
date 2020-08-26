@@ -1,0 +1,8 @@
+.NewFeedback form {
+    padding-bottom: 15px;
+  }
+  
+  .NewFeedback form textarea {
+    height: 300px;
+    font-size: 24px;
+  }
